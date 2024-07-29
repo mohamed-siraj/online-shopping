@@ -1,5 +1,11 @@
 <?php
 session_start();
+/**
+ * check super admin
+ */
+if($_SESSION['email'] != 'zeenathminha@gmail.com' && $_SESSION['password'] != "zeenathminha@gmail.com"){
+    header('Location: /');
+}
 ?>
 <!doctype html>
 <html lang="en">
