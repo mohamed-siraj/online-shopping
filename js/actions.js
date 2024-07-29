@@ -168,6 +168,7 @@ $(document).ready(function(){
 		used to redirect user from home page to profile.php page
 	*/
 	$("#login").on("submit",function(event){
+
 		event.preventDefault();
 		$(".overlay").show();
 		$.ajax({
@@ -176,7 +177,7 @@ $(document).ready(function(){
 			data	:$("#login").serialize(),
 			success	:function(data){
 				if(data == "login_success"){
-					window.location.href = "index.php";
+					window.location.href = "/admin/index.php";
 				}else if(data == "cart_login"){
 					window.location.href = "cart.php";
 				}else{

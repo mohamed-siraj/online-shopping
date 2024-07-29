@@ -3,6 +3,13 @@
 session_start();
 include("../db.php");
 
+    /**
+     * check super admin
+     */
+    if($_SESSION['email'] != 'zeenathminha@gmail.com' && $_SESSION['password'] != "zeenathminha@gmail.com"){
+        header('Location: /');
+    }
+
 include "sidenav.php";
 include "topheader.php";
 ?>
