@@ -133,7 +133,7 @@ session_start();
                                 
                                 echo '
                                <div class="dropdownn">
-                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-fa-order"></i> HI '.$row["first_name"].' '.$row["last_name"].'</a>
+                                  <a href="#" class="dropdownn" data-toggle="modal" data-target="#myModal" ><i class="fa fa-user-o"></i> HI '.$row["first_name"].' '.$row["last_name"].'</a>
                                   <div class="dropdownn-content">
                                     <a href="/my-order.php"><i class="fa fa-user-circle" aria-hidden="true" ></i>My Order</a>
                                     <a href="logout.php"  ><i class="fa fa-sign-in" aria-hidden="true"></i>Log out</a>
@@ -185,24 +185,24 @@ session_start();
 
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
-							<div class="header-search">
-								<form>
-                                    <label>
-                                        <select class="input-select">
-                                            <option value="">All Categories</option>
-                                            <option value="1">History Book</option>
-                                            <option value="2">Children Book </option>
-                                            <option value="3">Education Book</option>
-                                            <option value="4">Science Book</option>
-                                            <option value="5">Technology Book</option>
-                                            <option value="6">Cartoon Book</option>
-                                            <option value="7">Religious Book</option>
-                                        </select>
-                                    </label>
-                                    <label for="search"></label><input class="input" id="search" type="text" placeholder="Search here">
-									<button type="submit" id="search_btn" class="search-btn">Search</button>
-								</form>
-							</div>
+<!--							<div class="header-search">-->
+<!--								<form>-->
+<!--                                    <label>-->
+<!--                                        <select class="input-select">-->
+<!--                                            <option value="">All Categories</option>-->
+<!--                                            <option value="1">History Book</option>-->
+<!--                                            <option value="2">Children Book </option>-->
+<!--                                            <option value="3">Education Book</option>-->
+<!--                                            <option value="4">Science Book</option>-->
+<!--                                            <option value="5">Technology Book</option>-->
+<!--                                            <option value="6">Cartoon Book</option>-->
+<!--                                            <option value="7">Religious Book</option>-->
+<!--                                        </select>-->
+<!--                                    </label>-->
+<!--                                    <label for="search"></label><input class="input" id="search" type="text" placeholder="Search here">-->
+<!--									<button type="submit" id="search_btn" class="search-btn">Search</button>-->
+<!--								</form>-->
+<!--							</div>-->
 						</div>
 						<!-- /SEARCH BAR -->
 

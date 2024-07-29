@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "db.php";
+echo $_SESSION["uid"];
 if (isset($_SESSION["uid"])) {
 
 	$f_name = $_POST["firstname"];

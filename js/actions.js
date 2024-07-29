@@ -231,13 +231,14 @@ $(document).ready(function(){
 	//Add Product into Cart
 	$("body").delegate("#product","click",function(event){
 		var pid = $(this).attr("pid");
+		var qty = $('#quantity').val();
 		
 		event.preventDefault();
 		$(".overlay").show();
 		$.ajax({
 			url : "action.php",
 			method : "POST",
-			data : {addToCart:1,proId:pid,},
+			data : {addToCart:1,proId:pid,qty:qty},
 			success : function(data){
 				count_item();
 				getCartItem();
@@ -384,7 +385,7 @@ $(document).ready(function(){
 		$('.total').each(function(){
 			net_total += ($(this).val()-0);
 		})
-		$('.net_total').html("Total : $ " +net_total);
+		$('.net_total').html("Total : Rs. " +net_total);
 	}
 
 	//remove product from cart
