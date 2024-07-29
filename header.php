@@ -190,11 +190,13 @@ session_start();
                                     <label>
                                         <select class="input-select">
                                             <option value="">All Categories</option>
-                                            <option value="1">History Books</option>
-                                            <option value="2">children Book </option>
-                                            <option value="3">education Book</option>
+                                            <option value="1">History Book</option>
+                                            <option value="2">Children Book </option>
+                                            <option value="3">Education Book</option>
                                             <option value="4">Science Book</option>
-                                            <option value="5">technology Book</option>
+                                            <option value="5">Technology Book</option>
+                                            <option value="6">Cartoon Book</option>
+                                            <option value="7">Religious Book</option>
                                         </select>
                                     </label>
                                     <label for="search"></label><input class="input" id="search" type="text" placeholder="Search here">

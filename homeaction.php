@@ -16,7 +16,7 @@ if(isset($_POST["categoryhome"])){
 					<!-- NAV -->
 					<ul class='main-nav nav navbar-nav'>
                     <li class='active'><a href='index.php'>Home</a></li>
-                    <li><a href='store.php'>Electronics</a></li>
+                    <li><a href='store.php?q=1'>History Book</a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -33,7 +33,7 @@ if(isset($_POST["categoryhome"])){
 			echo "
 					
                     
-                               <li class='categoryhome' cid='$cid'><a href='store.php'>$cat_name</a></li>
+                               <li class='categoryhome' cid='$cid'><a href='store.php?q=$cid'>$cat_name</a></li>
                     
 			";
 		}
