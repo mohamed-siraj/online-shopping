@@ -11,8 +11,8 @@ if(isset($_POST['btn_save']))
     $price=$_POST['price'];
     $c_price=$_POST['c_price'];
     $product_type=$_POST['product_type'];
-    $brand=$_POST['brand'];
     $tags=$_POST['tags'];
+    $offer_price=$_POST['offer_price'];
 
     //picture coding
     $picture_name=$_FILES['picture']['name'];
@@ -22,12 +22,11 @@ if(isset($_POST['btn_save']))
 
     if($picture_type=="image/jpeg" || $picture_type=="image/jpg" || $picture_type=="image/png" || $picture_type=="image/gif")
     {
-        if($picture_size<=50000000)
 
         $pic_name=time()."_".$picture_name;
         move_uploaded_file($picture_tmp_name,"../product_images/".$pic_name);
 
-        mysqli_query($con,"insert into products (product_cat, product_brand,product_title,product_price, product_desc, product_image,product_keywords) values ('$product_type','$brand','$product_name','$price','$details','$pic_name','$tags')") or die ("query incorrect");
+        mysqli_query($con,"insert into products (product_cat,offer_price,product_title,product_price, product_desc, product_image,product_keywords) values ('$product_type','$offer_price','$product_name','$price','$details','$pic_name','$tags')") or die ("query incorrect");
 
         $success = "Product created successfully";
     }else{
@@ -92,7 +91,7 @@ include "topheader.php";
                                             <input type="file" name="picture" required class="btn btn-fill btn-success" id="picture" >
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mt-3">
                                         <div class="form-group">
                                             <label>Description</label>
                                             <textarea rows="4" cols="80" id="details" required name="details" class="form-control"></textarea>
@@ -100,8 +99,14 @@ include "topheader.php";
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Pricing</label>
-                                            <input type="text" id="price" name="price" required class="form-control" >
+                                            <label>Regular Pricing</label>
+                                            <input type="number" id="price" name="price" required class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Offer Pricing</label>
+                                            <input type="number" id="price" name="offer_price" required class="form-control" >
                                         </div>
                                     </div>
                                 </div>
@@ -117,14 +122,16 @@ include "topheader.php";
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Product Category (Should be 1 - 6)</label>
-                                            <input type="number" min="0" id="product_type" name="product_type" required="[1-6]" class="form-control" >
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="">Product Brand</label>
-                                            <input type="number" min="0" id="brand" name="brand" required class="form-control" >
+                                            <label>Product Category</label>
+                                            <select class="form-control" id="product_type" name="product_type" style="background: #202940">
+                                                <option value="1">History Book</option>
+                                                <option value="2">Children Book </option>
+                                                <option value="3">Education Book</option>
+                                                <option value="4">Science Book</option>
+                                                <option value="5">Technology Book</option>
+                                                <option value="6">Cartoon Book</option>
+                                                <option value="7">Religious Book</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">

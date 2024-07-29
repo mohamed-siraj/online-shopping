@@ -23,6 +23,9 @@ if($_SESSION['email'] != 'zeenathminha@gmail.com' && $_SESSION['password'] != "z
   <link href="assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
   <link href="assets/css/black-dashboard.css" rel="stylesheet" />
 
+    <!-- datatable css -->
+    <link href="https://cdn.datatables.net/v/dt/dt-2.1.2/datatables.min.css" rel="stylesheet">
+
 </head>
 
 <body class="dark-edition">
@@ -79,7 +82,7 @@ if($_SESSION['email'] != 'zeenathminha@gmail.com' && $_SESSION['password'] != "z
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="index.php">
+            <a class="nav-link" href="/logout.php">
               <i class="material-icons">logout</i>
               <p>Logout</p>
             </a>

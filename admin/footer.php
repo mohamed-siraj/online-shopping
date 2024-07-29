@@ -39,6 +39,8 @@
   <script src="./assets/js/material-dashboard.js?v=2.1.0"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="./assets/demo/demo.js"></script>
+<!--  datatable js    -->
+<script src="https://cdn.datatables.net/v/dt/dt-2.1.2/datatables.min.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -200,6 +202,8 @@
         });
       });
     });
+
+    new DataTable('#product_list');
   </script>
 </body>
 
