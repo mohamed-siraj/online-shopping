@@ -71,6 +71,8 @@
 		<script src="js/actions.js"></script>
 		<script src="js/sweetalert.min"></script>
 		<script src="js/jquery.payform.min.js" charset="utf-8"></script>
+        <!--  datatable js    -->
+        <script src="https://cdn.datatables.net/v/dt/dt-2.1.2/datatables.min.js"></script>
     <script src="js/script.js"></script>
 		<script>var c = 0;
         function menu(){
@@ -150,5 +152,7 @@
                 //seconds
             }, 0)
     }());
+
+    new DataTable('#product_list');
 </script>
 	

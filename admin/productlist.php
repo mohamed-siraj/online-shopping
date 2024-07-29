@@ -45,7 +45,7 @@ include "topheader.php";
                     </div>
                     <div class="card-body">
                         <div class="table-responsive ps">
-                            <table id="product_list" class="mdl-data-table table tablesorter" style="width:100%">
+                            <table id="product_list" class="mdl-data-table" style="width:100%">
                                 <thead class="text-primary">
                                 <tr>
                                     <th>Image</th>

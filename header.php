@@ -32,8 +32,9 @@ session_start();
 		<!-- Custom stlylesheet -->
 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
 		<link type="text/css" rel="stylesheet" href="css/accountbtn.css"/>
-		
-		
+
+        <!-- datatable css -->
+        <link href="https://cdn.datatables.net/v/dt/dt-2.1.2/datatables.min.css" rel="stylesheet">
 		
          
 		
