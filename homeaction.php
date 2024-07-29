@@ -16,7 +16,7 @@ if(isset($_POST["categoryhome"])){
 					<!-- NAV -->
 					<ul class='main-nav nav navbar-nav'>
                     <li class='active'><a href='index.php'>Home</a></li>
-                    <li><a href='store.php'>Electronics</a></li>
+                    <li><a href='store.php?q=1'>History Book</a></li>
 	";
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
@@ -33,7 +33,7 @@ if(isset($_POST["categoryhome"])){
 			echo "
 					
                     
-                               <li class='categoryhome' cid='$cid'><a href='store.php'>$cat_name</a></li>
+                               <li class='categoryhome' cid='$cid'><a href='store.php?q=$cid'>$cat_name</a></li>
                     
 			";
 		}
@@ -62,7 +62,7 @@ if(isset($_POST["page"])){
 	}
 }
 if(isset($_POST["getProducthome"])){
-	$limit = 3;
+	$limit = 9;
 	if(isset($_POST["setPage"])){
 		$pageno = $_POST["pageNumber"];
 		$start = ($pageno * $limit) - $limit;
@@ -79,7 +79,7 @@ if(isset($_POST["getProducthome"])){
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
-            
+            $offer_price = $row['offer_price'];
             $cat_name = $row["cat_title"];
 			echo "
 				
@@ -91,7 +91,7 @@ if(isset($_POST["getProducthome"])){
 									<div class='product-body'>
 										<p class='product-category'>$cat_name</p>
 										<h3 class='product-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price'>$pro_price<del class='product-old-price'>$990.00</del></h4>
+										<h4 class='product-price'>Rs.$pro_price<del class='product-old-price'>Rs.$offer_price</del></h4>
 									</div></a>
 								</div>
                         

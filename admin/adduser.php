@@ -1,8 +1,11 @@
  <?php
-session_start();
 include("../db.php");
 include "sidenav.php";
 include "topheader.php";
+
+$error = "";
+$success = "";
+
 if(isset($_POST['btn_save']))
 {
 $first_name=$_POST['first_name'];
@@ -13,10 +16,26 @@ $mobile=$_POST['phone'];
 $address1=$_POST['city'];
 $address2=$_POST['country'];
 
-mysqli_query($con,"insert into user_info(first_name, last_name,email,password,mobile,address1,address2) values ('$first_name','$last_name','$email','$user_password','$mobile','$address1','$address2')") 
-			or die ("Query 1 is inncorrect........");
-header("location: manage_users.php"); 
-mysqli_close($con);
+    /**
+     * select user
+     */
+    $sql = "SELECT * FROM user_info where email='$email'";
+    $check = $con->query($sql);
+
+    if ($check->num_rows > 0) {
+        $error = 'Email already exists - '. $email. " Try another email";
+    } else {
+        $sql = "INSERT INTO user_info (first_name, last_name,email,password,mobile,address1,address2) VALUES ('$first_name','$last_name','$email','$user_password','$mobile','$address1','$address2')";
+
+        if ($con->query($sql) === TRUE) {
+            $success = "User created successfully";
+        } else {
+            $error = "Error: " . $sql . "<br>" . $con->error;
+        }
+    }
+
+    $con->close();
+
 }
 
 
@@ -26,13 +45,41 @@ mysqli_close($con);
         <div class="container-fluid">
           <!-- your content here -->
           <div class="col-md-12">
+              <?php
+                if($error != ""){
+
+              ?>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?php echo $error; ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+              <?php
+              }
+              ?>
+
+              <?php
+              if($success != ""){
+
+                  ?>
+                  <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <?php echo $success; ?>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <?php
+              }
+              ?>
+
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Add Users</h4>
                   <p class="card-category">Complete User profile</p>
                 </div>
                 <div class="card-body">
-                  <form action="" method="post" name="form" enctype="multipart/form-data">
+                  <form action="/admin/adduser.php" method="post" enctype="multipart/form-data">
                     <div class="row">
                       
                       <div class="col-md-3">
@@ -86,7 +133,7 @@ mysqli_close($con);
                       
                     </div>
                     
-                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Update User</button>
+                    <button type="submit" name="btn_save" id="btn_save" class="btn btn-primary pull-right">Create User</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

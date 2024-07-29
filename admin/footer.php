@@ -4,7 +4,7 @@
             <ul>
               <li>
                 <a href="">
-                  PuneethReddy
+                    <?php echo $_SESSION["first_name"] . " " .$_SESSION["last_name"];?>
                 </a>
               </li>
             </ul>
@@ -14,7 +14,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="" target="_blank">Mohamed Siraj</a> for a better web.
+            <a href="" target="_blank"> <?php echo $_SESSION["first_name"] . " " .$_SESSION["last_name"];?></a> for a better web.
           </div>
           <!-- your footer here -->
         </div>
@@ -39,6 +39,8 @@
   <script src="./assets/js/material-dashboard.js?v=2.1.0"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="./assets/demo/demo.js"></script>
+<!--  datatable js    -->
+<script src="https://cdn.datatables.net/v/dt/dt-2.1.2/datatables.min.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -200,6 +202,8 @@
         });
       });
     });
+
+    new DataTable('#product_list');
   </script>
 </body>
 
