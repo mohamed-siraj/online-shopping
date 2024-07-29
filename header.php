@@ -187,7 +187,7 @@ session_start();
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
-								<form>
+								<form action="store.php?q=1">
                                     <label>
                                         <select class="input-select">
                                             <option value="">All Categories</option>
