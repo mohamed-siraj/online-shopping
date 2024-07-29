@@ -79,7 +79,7 @@ if(isset($_POST["getProducthome"])){
 			$pro_title = $row['product_title'];
 			$pro_price = $row['product_price'];
 			$pro_image = $row['product_image'];
-            
+            $offer_price = $row['offer_price'];
             $cat_name = $row["cat_title"];
 			echo "
 				
@@ -91,7 +91,7 @@ if(isset($_POST["getProducthome"])){
 									<div class='product-body'>
 										<p class='product-category'>$cat_name</p>
 										<h3 class='product-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price'>Rs. $pro_price<del class='product-old-price'>Rs. 990.00</del></h4>
+										<h4 class='product-price'>Rs.$pro_price<del class='product-old-price'>Rs.$offer_price</del></h4>
 									</div></a>
 								</div>
                         

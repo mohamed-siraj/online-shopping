@@ -59,6 +59,7 @@
                                             $pro_title = $row['product_title'];
                                             $pro_price = $row['product_price'];
                                             $pro_image = $row['product_image'];
+                                            $offer_price = $row['offer_price'];
 
                                             $cat_name = $row["cat_title"];
 
@@ -77,7 +78,7 @@
                               <div class='product-body'>
                               <p class='product-category'>$cat_name</p>
                               <h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-                              <h4 class='product-price header-cart-item-info'>Rs. $pro_price<del class='product-old-price'>Rs. 990.00</del></h4>
+                              <h4 class='product-price header-cart-item-info'>Rs.$pro_price<del class='product-old-price'>Rs.$offer_price</del></h4>
                               <div class='product-rating'>
                               <i class='fa fa-star'></i>
                               <i class='fa fa-star'></i>
@@ -200,7 +201,7 @@
                                             $pro_title = $row['product_title'];
                                             $pro_price = $row['product_price'];
                                             $pro_image = $row['product_image'];
-
+                                            $offer_price = $row['offer_price'];
                                             $cat_name = $row["cat_title"];
 
                                             echo "
@@ -218,7 +219,7 @@
                               <div class='product-body'>
                               <p class='product-category'>$cat_name</p>
                               <h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-                              <h4 class='product-price header-cart-item-info'>Rs. $pro_price<del class='product-old-price'>Rs. 990.00</del></h4>
+                              <h4 class='product-price header-cart-item-info'>Rs.$pro_price<del class='product-old-price'>Rs.$offer_price</del></h4>
                               <div class='product-rating'>
                               <i class='fa fa-star'></i>
                               <i class='fa fa-star'></i>
