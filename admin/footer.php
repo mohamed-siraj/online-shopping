@@ -4,7 +4,7 @@
             <ul>
               <li>
                 <a href="">
-                  PuneethReddy
+                    <?php echo $_SESSION["first_name"] . " " .$_SESSION["last_name"];?>
                 </a>
               </li>
             </ul>
@@ -14,7 +14,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="" target="_blank">Mohamed Siraj</a> for a better web.
+            <a href="" target="_blank"> <?php echo $_SESSION["first_name"] . " " .$_SESSION["last_name"];?></a> for a better web.
           </div>
           <!-- your footer here -->
         </div>
