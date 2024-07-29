@@ -173,11 +173,11 @@ session_start();
 						<!-- LOGO -->
 						<div class="col-md-3">
 							<div class="header-logo">
-								<a href="#" class="logo">
+								<a href="/" class="logo">
 								<font style="font-style:normal; font-size: 33px;color: aliceblue;font-family: serif">
                                         Book Mart
                                     </font>
-									
+
 								</a>
 							</div>
 						</div>
@@ -187,12 +187,17 @@ session_start();
 						<div class="col-md-6">
 							<div class="header-search">
 								<form>
-									<select class="input-select">
-										<option value="0">All Categories</option>
-										<option value="1">Men</option>
-										<option value="1">Women </option>
-									</select>
-									<input class="input" id="search" type="text" placeholder="Search here">
+                                    <label>
+                                        <select class="input-select">
+                                            <option value="">All Categories</option>
+                                            <option value="1">History Books</option>
+                                            <option value="2">children Book </option>
+                                            <option value="3">education Book</option>
+                                            <option value="4">Science Book</option>
+                                            <option value="5">technology Book</option>
+                                        </select>
+                                    </label>
+                                    <label for="search"></label><input class="input" id="search" type="text" placeholder="Search here">
 									<button type="submit" id="search_btn" class="search-btn">Search</button>
 								</form>
 							</div>
@@ -200,9 +205,9 @@ session_start();
 						<!-- /SEARCH BAR -->
 
 						<!-- ACCOUNT -->
-						<div class="col-md-3 clearfix">
+						<div class="col-md-32 clearfix">
 							<div class="header-ctn">
-								
+
 
 								<!-- Cart -->
 								<div class="dropdown">
@@ -213,16 +218,16 @@ session_start();
 									</a>
 									<div class="cart-dropdown"  >
 										<div class="cart-list" id="cart_product">
-										
-											
+
+
 										</div>
-										
+
 										<div class="cart-btns">
 												<a href="cart.php" style="width:100%;"><i class="fa fa-edit"></i>  edit cart</a>
-											
+
 										</div>
 									</div>
-										
+
 									</div>
 								<!-- /Cart -->
 

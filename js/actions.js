@@ -168,7 +168,6 @@ $(document).ready(function(){
 		used to redirect user from home page to profile.php page
 	*/
 	$("#login").on("submit",function(event){
-
 		event.preventDefault();
 		$(".overlay").show();
 		$.ajax({
